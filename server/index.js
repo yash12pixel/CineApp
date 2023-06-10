@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv")
 dotenv.config()
 const mongoose = require("mongoose");
+const cors = require("cors")
 
 // const config = require("./config/key");
 
@@ -13,6 +14,7 @@ const MogoDBURI = process.env.MONGO_URI
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors())
 
 app.use('/api/users', require('./routes/users'));
 app.use('/api/comment', require('./routes/comment'));

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { Like } = require("../models/Like");
-const { Dislike } = require("../models/Dislike");
+const Like  = require("../models/Like");
+const Dislike = require("../models/Dislike");
 
-const { auth } = require("../middleware/auth");
+const auth  = require("../middleware/auth");
 
 //=================================
 //             Likes DisLikes

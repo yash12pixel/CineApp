@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 
-const { Favorite } = require("../models/Favorite");
+const Favorite  = require("../models/Favorite");
 
-const { auth } = require("../middleware/auth");
+const auth  = require("../middleware/auth");
 
 //=================================
 //             Subscribe

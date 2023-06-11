@@ -9,7 +9,7 @@ const {auth}  = require("../middleware/auth");
 //=================================
 
 router.get("/auth", auth, (req, res) => {
-    return res.status(200).send({
+     res.status(200).send({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
         isAuth: true,
@@ -23,7 +23,14 @@ router.get("/auth", auth, (req, res) => {
 
 router.post("/register", (req, res) => {
 
-    const user = new User(req.body);
+    let {email,image, name, password} = req.body
+
+    const user = new User({
+        email:email,
+        image: image,
+        name: name,
+        password: password
+    });
 
     user.save((err, doc) => {
         if (err) return res.json({ success: false, err });
